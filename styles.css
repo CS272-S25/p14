@@ -1,0 +1,81 @@
+/* NAVBAR */
+.custom-header {
+    background-color: #002366;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+}
+
+/* Navbar links */
+.custom-header a {
+    color: white !important;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.custom-header a:hover {
+    color: #a8c6ff;
+}
+
+/* PAGE BACKGROUND - soft gray instead of lightgoldenrodyellow */
+body {
+    background-color: #f5f6f7;
+    font-family: 'Helvetica Neue', 'Poppins', 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* HEADINGS */
+h1 {
+    color: #002366;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h2, #sub-heading {
+    color: #002366;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    color: #002366;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* MAIN SECTION CARD */
+section {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+/* PARAGRAPH */
+p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* LINK */
+a {
+    color: #0056b3;
+    font-weight: 600;
+    text-decoration: none;
+}
