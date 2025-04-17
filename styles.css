@@ -79,3 +79,22 @@ a {
     font-weight: 600;
     text-decoration: none;
 }
+
+/* TABLE */
+td {
+    color: #002366 !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 50px;
+    white-space: normal;
+  }
+  
+th {
+    color: #002366 !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 50px;
+    white-space: normal;
+  }
