@@ -30,65 +30,54 @@
             <h1 class="mb-3">Calendar</h1>
             <div class="row align-items-center">
                 <div class="col-md-12">
-                    <h2 id="sub-heading">Customize your to-do list.</h2>
-                    <p class="text-muted">Write down your tasks and assign levels of importance and urgancy for them.
-                        Set deadline
-                        and estimated time for completing them. This tool helps you relieve your stress and get things
-                        done!</p>
+                    <h2 id="sub-heading">Keep track of your Google Calendars</h2>
+                    <p class="text-muted">Add new Google Calendars to keep track of your events by providing the
+                        calendar ID and a label name. Easily switch between your calendars and stay organized!</p>
                 </div>
 
                 <div class="todo-app mb-5">
                     <div class="d-flex justify-content-center">
-                        <div class="bg-white p-4 rounded" style="max-width: 800px; width: 100%;">
-                            <form id="todo-form" class="row g-3">
-                                <!-- First row: Task, Deadline, Estimated Time -->
-                                <div class="col-md-4">
-                                    <input type="text" id="input-todo-item" class="form-control"
-                                        placeholder="Add your task">
+                        <div class="bg-white p-4 rounded" style="max-width: 600px; width: 100%;">
+                            <!-- Form: Calendar ID and Name -->
+                            <form id="calendar-form" class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" id="calendar-id" class="form-control" placeholder="Calendar ID"
+                                        required>
                                 </div>
-                                <div class="col-md-4">
-                                    <input type="text" id="input-todo-deadline" class="form-control"
-                                        placeholder="Add your deadline">
+                                <div class="col-md-6">
+                                    <input type="text" id="calendar-name" class="form-control"
+                                        placeholder="Calendar Name" required>
                                 </div>
-                                <div class="col-md-4">
-                                    <input type="text" id="input-todo-estimated-time" class="form-control"
-                                        placeholder="Estimated time">
-                                </div>
-
-                                <!-- Second row: Importance, Urgency, Add Button -->
-                                <div class="col-md-4">
-                                    <select id="input-todo-importance" class="form-select">
-                                        <option disabled selected>Importance</option>
-                                        <option value="Low">Low</option>
-                                        <option value="Medium">Medium</option>
-                                        <option value="High">High</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select id="input-todo-urgency" class="form-select">
-                                        <option disabled selected>Urgency</option>
-                                        <option value="Low">Low</option>
-                                        <option value="Medium">Medium</option>
-                                        <option value="High">High</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary w-100">Add</button>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-success w-100">Remember</button>
                                 </div>
                             </form>
+
+                            <!-- Dropdown: Saved Calendars -->
+                            <div class="d-flex align-items-center gap-2">
+                                <select id="saved-calendars" class="form-select" onchange="loadCalendar()">
+                                    <option selected disabled>Select a calendar</option>
+                                </select>
+
+                                <button id="delete-calendar" class="btn btn-danger btn-sm" onclick="deleteCalendar()"
+                                    disabled>
+                                    <span class="bi bi-trash"></span>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
-                <iframe
-                    src="https://calendar.google.com/calendar/embed?src=74ee20ee5ec4d76963efbf4a906dcab066f647269e0b42df3f3047b8bdb89cbd%40group.calendar.google.com&ctz=America%2FChicago"
-                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
-                </iframe>
 
+                <iframe id="calendar-iframe">
+                </iframe>
             </div>
-            </div>
+
         </section>
     </main>
 </body>
+
+<script src="./calendar.js"></script>
 
 </html>
