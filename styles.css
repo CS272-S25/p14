@@ -39,7 +39,8 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-h2, #sub-heading {
+h2,
+#sub-heading {
     color: #002366;
     text-align: center;
     font-size: 1.2rem;
@@ -88,8 +89,8 @@ td {
     overflow-wrap: break-word;
     max-width: 50px;
     white-space: normal;
-  }
-  
+}
+
 th {
     color: #002366 !important;
     word-wrap: break-word;
@@ -97,4 +98,12 @@ th {
     overflow-wrap: break-word;
     max-width: 50px;
     white-space: normal;
-  }
+}
+
+iframe {
+    border: 0;
+    width: 800px;
+    height: 600px;
+    frame-border: none;
+    overflow: hidden;
+}
