@@ -10,12 +10,12 @@ document.getElementById("goals-form").addEventListener("submit", function (event
     const goal = document.getElementById("input-goal").value;
     const type = document.getElementById("input-goal-type").value;
 
-    if (!goal || !type) {
+    if (!goal || type === "Goal Type") {
         alert("Please fill out all fields.");
         return;
     }
 
-    const newGoal = { goal, type};
+    const newGoal = {goal, type};
     const goalList = JSON.parse(localStorage.getItem("goalsList")) || [];
     goalList.push(newGoal);
     localStorage.setItem("goalsList", JSON.stringify(goalList));
@@ -29,9 +29,9 @@ function addGoalToTable(goalObj) {
     const goalCell = document.createElement("th");
     goalCell.textContent = goalObj.goal;
 
-    const deadlineCell = document.createElement("td");
-    deadlineCell.classList.add("align-middle");
-    deadlineCell.textContent = goalObj.deadline;
+    const typeCell = document.createElement("td");
+    typeCell.classList.add("align-middle");
+    typeCell.textContent = goalObj.type;
 
     const actionCell = document.createElement("td");
     actionCell.classList.add("align-middle");
@@ -41,18 +41,18 @@ function addGoalToTable(goalObj) {
     completeBtn.classList.add("btn", "btn-outline-success", "btn-sm", "me-2");
 
     completeBtn.addEventListener("click", function () {
-        let completedTaskList = JSON.parse(localStorage.getItem("completedTaskList")) || [];
-        if (!completedTaskList.includes(goalObj.goal)) {
-            completeTask(document.getElementById("goal-tbody"), newRow);
-            completedTaskList.push(goalObj.goal);
-            localStorage.setItem("completedTaskList", JSON.stringify(completedTaskList));
+        let completedGoalList = JSON.parse(localStorage.getItem("completedGoalList")) || [];
+        if (!completedGoalList.includes(goalObj.goal)) {
+            completeGoal(document.getElementById("goal-tbody"), newRow);
+            completedGoalList.push(goalObj.goal);
+            localStorage.setItem("completedGoalList", JSON.stringify(completedGoalList));
         }
     });
 
-    let completedTaskList = JSON.parse(localStorage.getItem("completedTaskList")) || [];
-    if (completedTaskList.includes(goalObj.goal)) {
-        completeTask(document.getElementById("goal-tbody"), newRow);
-    };
+    let completedGoalList = JSON.parse(localStorage.getItem("completedGoalList")) || [];
+    if (completedGoalList.includes(goalObj.goal)) {
+        completeGoal(document.getElementById("goal-tbody"), newRow);
+    }
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "✘";
@@ -63,33 +63,32 @@ function addGoalToTable(goalObj) {
 
     actionCell.appendChild(completeBtn);
     actionCell.appendChild(deleteBtn);
-
     newRow.appendChild(goalCell);
-    newRow.appendChild(deadlineCell);
+    newRow.appendChild(typeCell);
     newRow.appendChild(actionCell);
 
     document.getElementById("goal-tbody").appendChild(newRow);
 }
 
-function completeTask(tbody, row) {
+function completeGoal(tbody, row) {
     row.style.opacity = "0.4";
     tbody.appendChild(row);
 }
 
-function deleteGoal(taskObj, row) {
+function deleteGoal(goalObj, row) {
     row.remove();
-    let taskList = JSON.parse(localStorage.getItem("goalsList")) || [];
-    let completedTaskList = JSON.parse(localStorage.getItem("completedTaskList")) || [];
-    taskList = taskList.filter(t =>
-        !(t.task === taskObj.task &&
-            t.deadline === taskObj.deadline &&
-            t.time === taskObj.time &&
-            t.importance === taskObj.importance &&
-            t.urgency === taskObj.urgency)
+    let goalList = JSON.parse(localStorage.getItem("goalsList")) || [];
+    let completedGoalList = JSON.parse(localStorage.getItem("completedGoalList")) || [];
+    goalList = goalList.filter(t =>
+        !(t.goal === goalObj.goal &&
+            t.type === goalObj.type &&
+            t.time === goalObj.time &&
+            t.importance === goalObj.importance &&
+            t.urgency === goalObj.urgency)
     );
-    completedTaskList = completedTaskList.filter(t =>
-        !(t === taskObj.task)
+    completedGoalList = completedGoalList.filter(t =>
+        !(t === goalObj.goal)
     );
-    localStorage.setItem("goalsList", JSON.stringify(taskList));
-    localStorage.setItem("completedTaskList", JSON.stringify(completedTaskList));
+    localStorage.setItem("goalsList", JSON.stringify(goalList));
+    localStorage.setItem("completedGoalList", JSON.stringify(completedGoalList));
 }
