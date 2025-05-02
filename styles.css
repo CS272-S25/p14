@@ -107,3 +107,26 @@ iframe {
     frame-border: none;
     overflow: hidden;
 }
+
+.breathing-tracker-container {
+    width: 50vmin;
+    height: 50vmin;
+    position: relative;
+    margin: 0 auto;
+}
+
+.breathing-tracker-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring {
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.breathing-phase {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
