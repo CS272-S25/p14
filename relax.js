@@ -15,7 +15,7 @@ const breathingPhases = [
     { label: "Hold", duration: 4000 }
 ];
 
-let quoteInterval, breathInterval;
+let breathInterval;
 
 function setProgress(percent) {
     const offset = circumference - percent * circumference;
@@ -24,7 +24,6 @@ function setProgress(percent) {
 
 function updateQuote() {
     // Needed to use a proxy to avoid CORS issues
-
     const url = "https://zenquotes.io/api/random";
     const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(url);
 
@@ -65,18 +64,15 @@ function startBreathingCycle() {
         elapsed += 200;
         if (elapsed >= totalTime) {
             clearInterval(breathInterval);
-            clearInterval(quoteInterval);
             phase.textContent = "Done ✨";
             setProgress(1);
         }
     }, 200);
-
-    updateQuote();
-    quoteInterval = setInterval(updateQuote, 20000);
 }
 
 startBtn.addEventListener("click", () => {
     clearInterval(breathInterval);
-    clearInterval(quoteInterval);
     startBreathingCycle();
+
+    updateQuote();
 });
