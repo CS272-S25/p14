@@ -23,13 +23,19 @@ function setProgress(percent) {
 }
 
 function updateQuote() {
-    fetch("https://zenquotes.io/api/random")
+    // Needed to use a proxy to avoid CORS issues
+
+    const url = "https://zenquotes.io/api/random";
+    const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(url);
+
+    fetch(proxyUrl)
         .then(res => res.json())
         .then(data => {
-            quote.textContent = `"${data[0].q}" — ${data[0].a}`;
+            const parsed = JSON.parse(data.contents);
+            quote.textContent = `"${parsed[0].q}" — ${parsed[0].a}`;
         })
         .catch(() => {
-            quote.textContent = '\"Question yourself constantly: what is the essence of your mind. You will need nothing else\" - Nyogen Senzaki';
+            quote.textContent = `"Question yourself constantly: what is the essence of your mind? You will need nothing else." — Nyogen Senzaki`;
         });
 }
 
