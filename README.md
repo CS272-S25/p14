@@ -8,8 +8,9 @@ This website provides a structured yet engaging way to manage tasks, set goals, 
 ## Features
 - Home: View a summary of tasks and study statistics in one place including a dashboard of all our pages.
 - To-Do List: Manage assignments based on time, importance and urgency.
-- My Goals: Track personal short or long term goals and stay on top of goals that stay!
+- My Goals: Track personal short or long-term goals and stay on top of goals that stay!
 - Timer: Boost focus with built-in timers, offering two different break limits.
 - Calendar: Stay ahead of deadlines and study schedules.
-- Relax: Breathing exercises between study sessions. Explore More: Tips to learn about your potential, managing time, and staying motivated towards your goals!
+- Relax: Breathing exercises between study sessions.
+- Explore More: Tips to learn about your potential, managing time, and staying motivated toward your goals!
 - About Us: More than just a website, it tells a little about who we are, our mission, and what stands out from other productivity tracking platforms.
