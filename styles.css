@@ -174,17 +174,17 @@ button {
   }
   
   button.shortBreak {
-    background-color: #002366;
+    background-color: #37567a;
   }
   button.shortBreak:hover {
-    background-color: #001c4d;
+    background-color: #243f5e;
   }
   
   button.longBreak {
-    background-color: #002366;
+    background-color: #37567a;
   }
   button.longBreak:hover {
-    background-color: #001c4d;
+    background-color: #243f5e;
   }
     
   button.active {
