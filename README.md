@@ -1,5 +1,15 @@
 # CS472 Group Project
 
-Hello! Welcome to our website.
+Welcome to Bucky Productivity Tracker! your all-in-one platform designed to help students stay organized, focused, and motivated in their studies.
 
-Our website is a student productivity tracker designed to keep users organized, focused, and motivated. It will have seven HTML pages, including a dashboard that provides a summary of tasks and study statistics. Students can manage assignments, track study time using a built-in timer, set personal goals, utilize a calendar, and celebrate milestones such as maintaining a one-week study streak. The final page introduces our team and shares our story. Our goal is to make studying both structured and engaging, offering a centralized space where students can boost productivity while keeping the experience enjoyable.
+## About the Project
+This website provides a structured yet engaging way to manage tasks, set goals, and optimize study sessions. Featuring **seven interactive HTML pages**, our platform ensures students can efficiently track assignments, study time, and personal progress.
+
+## Features
+Home: View a summary of tasks and study statistics in one place including a dashboard of all our pages.
+To-Do List: Manage assignments based on time, importance and urgency
+My Goals: Track personal short or long term goals and stay on top of goals that stay!
+Timer: Boost focus with built-in timers, offering two different break limits.
+Calendar: Stay ahead of deadlines and study schedules.
+Relaxa: Breathing excerices between study sessions. Explore More: Tips to learn about your potential, managing time, and satying motivated towards your goals!
+About Us: Learn about our mission and additional resources.
